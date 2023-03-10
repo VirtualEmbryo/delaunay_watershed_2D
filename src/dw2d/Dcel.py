@@ -810,8 +810,9 @@ def plot_DCEL_bw(Verts,Edges,figsize=(5,5)):
         for elt in line : 
             
             points = Verts[elt]
-            ax.plot(points[:,1],-points[:,0],'w')
+            ax.plot(points[:,1],points[:,0],'w')
     ax.set_aspect('equal')
+    plt.gca().invert_yaxis()
 
 
 def plot_DCEL_polyline(Verts,Edges,figsize=(5,5)): 
@@ -821,19 +822,20 @@ def plot_DCEL_polyline(Verts,Edges,figsize=(5,5)):
         line = Edges_list[key]
         plot_polylines(line,Verts)
     ax.set_aspect('equal')
+    plt.gca().invert_yaxis()
 
 def plot_line(line,Verts,color=np.random.rand(3)):
     for elmts in line : 
         a,b=elmts
         coords = Verts[[a,b]]
-        plt.plot(coords[:,1],1-coords[:,0],'o-',color=color,linewidth=2, markersize=8)
+        plt.plot(coords[:,1],coords[:,0],'o-',color=color,linewidth=2, markersize=8)
 
 def plot_line_no_marker(line,Verts,color=np.random.rand(3)):
     print(line)
     for elmts in line : 
         a,b,=elmts
         coords = Verts[[a,b]]
-        plt.plot(coords[:,1],1-coords[:,0],'-',color=color,linewidth=2)
+        plt.plot(coords[:,1],coords[:,0],'-',color=color,linewidth=2)
         
 def plot_lines(Lines,Verts,random_seed=0): 
     np.random.seed(random_seed)

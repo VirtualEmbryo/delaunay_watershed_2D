@@ -14,7 +14,7 @@ Introductory notebooks with precise use case are provided.
 The algorithm takes as input segmentation masks and return multimaterial polygonal lines (2D).
 The original raw images can be inserted optionaly for visualisation but are not used for the reconstruction.
 
-This method is used as a backend for [forceviewer2d](https://www.todo), our 2D tension inference library.
+This method is used as a backend for [foambryo2d](https://github.com/VirtualEmbryo/foambryo2D), our 2D tension inference library.
 
 
 ### Example 
